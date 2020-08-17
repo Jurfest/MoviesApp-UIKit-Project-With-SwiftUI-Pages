@@ -17,6 +17,7 @@ struct MovieDetailsView: View {
         VStack {
             
             
+            URLImage(url: movie.poster)
             //Image(movie.poster)
             Text(movie.title)
             
@@ -28,8 +29,10 @@ struct MovieDetailsView: View {
 struct MovieDetailsView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let movie = Movie(title: "Once Upon a Time in the West", imdbId: "test", poster: "test")
+        let movie = Movie(title: "Once Upon a Time in the West", imdbId: "test", poster: "https://m.media-amazon.com/images/M/MV5BZmUwNGU2ZmItMmRiNC00MjhlLTg5YWUtODMyNzkxODYzMmZlXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg")
         
         return MovieDetailsView(movie: movie)
     }
 }
+
+
