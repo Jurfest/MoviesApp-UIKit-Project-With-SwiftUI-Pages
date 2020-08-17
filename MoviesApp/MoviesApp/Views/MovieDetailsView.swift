@@ -11,6 +11,7 @@ import SwiftUI
 
 struct MovieDetailsView: View {
     
+    @State private var selected: Bool = false
     let movie: Movie
     
     var body: some View {
@@ -19,12 +20,19 @@ struct MovieDetailsView: View {
             VStack {
                 
                 
+                HStack {
+                    Spacer()
+                    StarViewRepresentation(selected: $selected).frame(width: 35, height: 35).padding()
+                }
+                
+                
                 URLImage(url: movie.poster)
                     //.frame(width: 300, height: 300)
                 Text(movie.title).foregroundColor(Color.white).padding()
                 Spacer()
                 
             }
+            
         }
     }
     
