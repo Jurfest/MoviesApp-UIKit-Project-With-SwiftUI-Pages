@@ -15,7 +15,9 @@ struct MovieDetailsView: View {
     
     var body: some View {
         VStack {
-            Image(movie.poster)
+            
+            
+            //Image(movie.poster)
             Text(movie.title)
             
         }
