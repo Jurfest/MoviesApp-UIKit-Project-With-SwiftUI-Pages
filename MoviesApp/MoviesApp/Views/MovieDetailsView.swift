@@ -10,13 +10,24 @@ import Foundation
 import SwiftUI
 
 struct MovieDetailsView: View {
+    
+    let movie: Movie
+    
     var body: some View {
-        Text("Movie Details View")
+        VStack {
+            Image(movie.poster)
+            Text(movie.title)
+            
+        }
     }
+    
 }
 
 struct MovieDetailsView_Previews: PreviewProvider {
+
     static var previews: some View {
-        MovieDetailsView()
+        let movie = Movie(title: "Once Upon a Time in the West", imdbId: "test", poster: "test")
+        
+        return MovieDetailsView(movie: movie)
     }
 }

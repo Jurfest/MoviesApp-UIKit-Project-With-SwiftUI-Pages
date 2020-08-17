@@ -23,7 +23,13 @@ class MoviesTableViewController: UITableViewController {
     // similar to prepare for segue
     @IBSegueAction func showDetails(_ coder: NSCoder) -> UIViewController? {
         
-        let movieDetailsView = MovieDetailsView()
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
+            fatalError("Index Path is not definied")
+        }
+        
+        let movie = self.movies[indexPath.row]
+        let movieDetailsView = MovieDetailsView(movie: movie)
+        
         return UIHostingController(coder: coder, rootView: movieDetailsView)
     }
     
