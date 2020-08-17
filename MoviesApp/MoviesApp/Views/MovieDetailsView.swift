@@ -14,13 +14,17 @@ struct MovieDetailsView: View {
     let movie: Movie
     
     var body: some View {
-        VStack {
-            
-            
-            URLImage(url: movie.poster)
-            //Image(movie.poster)
-            Text(movie.title)
-            
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            VStack {
+                
+                
+                URLImage(url: movie.poster)
+                    //.frame(width: 300, height: 300)
+                Text(movie.title).foregroundColor(Color.white).padding()
+                Spacer()
+                
+            }
         }
     }
     
